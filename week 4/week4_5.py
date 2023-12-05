@@ -4,9 +4,12 @@ conversion. Test both functions. (Google will find you the formulae)."""
 
 
 def main():
+    x = input(
+        'what would you like the temperature to be converted in press c for Centigrade and f for Fahrenheit: ').lower()
+    while x != 'f' and x != "c":
+        x = input('what would you like the temperature to be converted in press c for Centigrade and f for Fahrenheit: ').lower()
+
     temp = float(input('Input the temperature: '))
-    x = input('what would you like the temperature to be converted in press c for Centigrade and f for Fahrenheit: ')
-    x = x.lower()
     print('The temperature is:', calculate(temp, x))
 
 

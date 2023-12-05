@@ -5,13 +5,17 @@ value"""
 
 def main():
     a = []
-    for i in range(6):
-        temperature = float(input("Enter temperature: "))
-        a.append(temperature)
+    while True:
+        temperature = input("Enter temperature press Enter to finish: ")
+        if not temperature:
+            break
+        else:
+            a.append(float(temperature))
     print('The maximum, minimum, and mean temperatures are:', calculate(a))
 
 
 def calculate(a):
+    print(a)
     max_temperature = max(a)
     min_temperature = min(a)
     mean_temperature = sum(a) / len(a)
