@@ -6,7 +6,7 @@ value"""
 def main():
     a = []
     while True:
-        temperature = input("Enter temperature press Enter to finish: ")
+        temperature = input("Enter temperature list (at least 1) : press Enter to finish: ")
         if not temperature:
             break
         else:
