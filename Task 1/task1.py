@@ -17,6 +17,7 @@ Any reasonable way to round odd amounts is fine."""
 
 
 def main():
+    print()
     print("WELCOME TO BPP")
     print("=================================")
     quantity_pizza = int(input("How many pizzas would you like:"))
