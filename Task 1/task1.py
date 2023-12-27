@@ -17,13 +17,24 @@ Any reasonable way to round odd amounts is fine."""
 
 
 def main():
-    print()
     print("WELCOME TO BPP")
     print("=================================")
     quantity_pizza = int(input("How many pizzas would you like:"))
+    while quantity_pizza < 0:
+        quantity_pizza = int(input("How many pizzas would you like:"))
+
     day = input("Is the pizza ordered on a Tuesday (y/n):").lower()
+    while day != "y" and day != "n":
+        day = input("Is the pizza ordered on a Tuesday (y/n):").lower()
+
     delivery = input("Do you need delivery (y/n):").lower()
+    while day != "y" and day != "n":
+        delivery = input("Do you need delivery (y/n):").lower()
+
     app = input("Is the app used (y/n):").lower()
+    while day != "y" and day != "n":
+        app = input("Is the app used (y/n):").lower()
+
     print("The total amount is:", amount(quantity_pizza, day, delivery, app))
 
 
