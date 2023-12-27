@@ -1,5 +1,4 @@
-"""
-A 50% discount applies to all pizza prices on Tuesdays. This discount does not apply to any delivery cost
+""" A 50% discount applies to all pizza prices on Tuesdays. This discount does not apply to any delivery cost
 (see below).
 
 Delivery costs £2.50, unless there are five or more pizzas in the order, in which case it is free.
@@ -7,13 +6,7 @@ Delivery costs £2.50, unless there are five or more pizzas in the order, in whi
 A discount of 25% of the total price (pizzas plus delivery, if required) is applied if the customer orders via the new
 BPP App.
 
-This is in addition to the Tuesday Discount, and is applied after that discount.
-
-Your program will need to gather various information about the order,
-and will then calculate and display the total price.
-
-All money amounts should be displayed as pounds and pence; that is with two decimal places.
-Any reasonable way to round odd amounts is fine."""
+This is in addition to the Tuesday Discount, and is applied after that discount."""
 
 
 def main():
