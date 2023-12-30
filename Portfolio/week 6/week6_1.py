@@ -2,3 +2,15 @@
 representation of that number in binary (base 2).
 Hint: This is in many ways a trick question. Think!
 """
+
+
+def main():
+    x = int(input("enter a integer number: "))
+    print("the binary version of the number is", binary(x))
+
+
+def binary(x):
+    return bin(x)
+
+
+main()
