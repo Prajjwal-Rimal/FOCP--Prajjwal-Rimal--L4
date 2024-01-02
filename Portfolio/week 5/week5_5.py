@@ -5,9 +5,11 @@ sure to handle the case where no arguments are provided!"""
 
 import sys
 
+
 def main():
     a = [float(temperature) for temperature in sys.argv[1:]]
     print('The maximum, minimum, and mean temperatures are:', calculate(a))
+
 
 def calculate(a):
     max_temperature = max(a)
@@ -15,5 +17,5 @@ def calculate(a):
     mean_temperature = sum(a) / len(a)
     return max_temperature, min_temperature, mean_temperature
 
-if __name__ == "__main__":
-    main()
+
+main()

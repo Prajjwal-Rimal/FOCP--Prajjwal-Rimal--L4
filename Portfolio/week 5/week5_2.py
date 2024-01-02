@@ -4,5 +4,5 @@ argument)."""
 
 import sys
 
-num = len(sys.argv) - 1
+num = len(sys.argv[1:])
 print(f"Number of command-line arguments: {num}")
