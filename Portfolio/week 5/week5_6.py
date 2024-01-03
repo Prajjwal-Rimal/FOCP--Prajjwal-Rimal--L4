@@ -12,6 +12,6 @@ stri = f.read()
 print(stri)
 f.close()
 
-f = open("sample" + "1" + ".txt", 'w')
+f = open(sys.argv[1] + "1" + ".txt", 'w')
 f.write(stri)
 f.close()
