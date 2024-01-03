@@ -9,3 +9,9 @@ clarity the random letters are not random:
 send cheese
 s e n d c h e e s e
 sxyexynxydxy cxyhxyexyexysxye """
+
+x = "hello"
+
+print(tuple(x))
+
+print("xy".join(tuple(x)))

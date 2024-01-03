@@ -4,7 +4,16 @@ and reverse the resulting string. Write, and test, a function that takes a strin
 containing a message and "encrypts" it in this way.
 """
 
-x = input("enter the text to be encrypted : ")
 
-print( "".join(x.split(" "))[::-1])
+def main():
+    x = input("enter the text to be encrypted : ")
+    print("The encrypted message is: ", enc(x))
 
+
+def enc(x):
+    x.split(" ")
+    "".join(x)
+    return x[::-1]
+
+
+main()
