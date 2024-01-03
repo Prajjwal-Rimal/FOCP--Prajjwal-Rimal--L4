@@ -3,3 +3,8 @@
 and reverse the resulting string. Write, and test, a function that takes a string
 containing a message and "encrypts" it in this way.
 """
+
+x = input("enter the text to be encrypted : ")
+
+print( "".join(x.split(" "))[::-1])
+
