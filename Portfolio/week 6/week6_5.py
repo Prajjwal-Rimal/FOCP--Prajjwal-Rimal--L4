@@ -10,8 +10,22 @@ send cheese
 s e n d c h e e s e
 sxyexynxydxy cxyhxyexyexysxye """
 
-x = "hello"
 
-print(tuple(x))
+def main():
+    x = input("enter the message to be encrypted:")
+    y = input("enter the message to be inserted :")
 
-print("xy".join(tuple(x)))
+    print("the encrypted message is", encr(x, y))
+
+
+def encr(x, y):
+    x = tuple(x)
+    print(x)
+    print(y.join(x))
+
+
+main()
+
+# x = "hello"
+# print(tuple(x))
+# print("xy".join(tuple(x)))
