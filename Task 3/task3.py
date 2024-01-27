@@ -1,17 +1,30 @@
-# Constants
-PASSWORD_FILE = "passwd.txt"
+import sys
+
+PASSWORD_FILE = "passwd.txt"  # define a constant password file
 
 
-def read_users():
+def read_users():  # read file data
     with open(PASSWORD_FILE, "r") as file:
         lines = file.readlines()
     return [line.strip().split(":") for line in lines]
 
 
-def write_users(users):
+def write_users(users):  # write data to the file
     with open(PASSWORD_FILE, "w") as file:
         for user in users:
             file.write(":".join(user) + "\n")
+
+
+def login():
+    users = read_users()
+
+    username = input("User: ").strip()
+    password = input("Password: ").strip()
+
+    if any(user[0] == username and user[2] == password for user in users):
+        print("access granted.\nWELCOME", username)
+    else:
+        print("access denied")
 
 
 def adduser():
@@ -21,27 +34,27 @@ def adduser():
     real_name = input("Enter real name: ").strip()
     password = input("Enter password: ").strip()
 
-    # Check if username already exists
     if any(user[0] == username for user in users):
-        print("Cannot add. Most likely username already exists.")
+        print("user already exists")
     else:
         users.append([username, real_name, password])
         write_users(users)
-        print("User Created.")
+        print("user created.")
 
 
 def deluser():
     users = read_users()
 
-    username = input("Enter username: ").strip()
+    username = input("User: ").strip()
+    password = input("Password: ").strip()
 
     # Check if username exists
-    if any(user[0] == username for user in users):
+    if any(user[0] == username and user[2] == password for user in users):
         users = [user for user in users if user[0] != username]
         write_users(users)
-        print("User Deleted.")
+        print("user deleted.")
     else:
-        print("User not found. Nothing changed.")
+        print("user not found")
 
 
 def passwd():
@@ -61,25 +74,26 @@ def passwd():
             write_users(users)
             print("Password changed.")
         else:
-            print("Invalid current password or passwords do not match. No change made.")
+            print("password ont match please try again")
+            passwd()
     else:
-        print("User not found. No change made.")
+        print("user not found.")
 
 
-def login():
-    users = read_users()
+if len(sys.argv) != 2:
+    print("\n\n please enter the function you want to use:\n we have 4 of them \n login, adduser, deluser, passwd\n\n")
+    sys.exit(1)
 
-    username = input("User: ").strip()
-    password = input("Password: ").strip()
+function_to_run = sys.argv[1]
 
-    if any(user[0] == username and user[2] == password for user in users):
-        print("Access granted.")
-    else:
-        print("Access denied.")
-
-
-login()
-adduser()
-deluser()
-passwd()
-
+if function_to_run == 'login':
+    login()
+elif function_to_run == 'adduser':
+    adduser()
+elif function_to_run == 'deluser':
+    deluser()
+elif function_to_run == 'passwd':
+    passwd()
+else:
+    print("\n\n please enter the function you want to use:\n we have 4 of them \n login, adduser, deluser, passwd\n\n")
+    sys.exit(1)
