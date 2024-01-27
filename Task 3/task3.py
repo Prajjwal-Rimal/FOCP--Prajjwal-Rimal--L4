@@ -1,4 +1,3 @@
-# Constants
 PASSWORD_FILE = "passwd.txt"
 
 
@@ -21,7 +20,6 @@ def adduser():
     real_name = input("Enter real name: ").strip()
     password = input("Enter password: ").strip()
 
-    # Check if username already exists
     if any(user[0] == username for user in users):
         print("Cannot add. Most likely username already exists.")
     else:
@@ -35,7 +33,6 @@ def deluser():
 
     username = input("Enter username: ").strip()
 
-    # Check if username exists
     if any(user[0] == username for user in users):
         users = [user for user in users if user[0] != username]
         write_users(users)
