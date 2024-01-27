@@ -18,8 +18,8 @@ def write_users(users):  # write data to the file
 def login():
     users = read_users()
 
-    username = input("enter your username: ").strip().lower
-    password = input("enter your password: ").strip().lower
+    username = input("enter your username: ").strip().lower()
+    password = input("enter your password: ").strip().lower()
 
     if any(user[0] == username and user[2] == password for user in users):
         print("access granted.\nWELCOME", username)
@@ -30,9 +30,9 @@ def login():
 def adduser():
     users = read_users()
 
-    username = input("enter your username: ").strip().lower
-    real_name = input("enter your real name: ").strip()
-    password = input("enter your password: ").strip().lower
+    username = input("enter your username: ").strip().lower()
+    real_name = input("enter your real name: ").strip().lower()
+    password = input("enter your password: ").strip().lower()
 
     if any(user[0] == username for user in users):
         print("user already exists")
@@ -45,8 +45,8 @@ def adduser():
 def deluser():
     users = read_users()
 
-    username = input("enter your username: ").strip().lower
-    password = input("enter your password: ").strip().lower
+    username = input("enter your username: ").strip().lower()
+    password = input("enter your password: ").strip().lower()
 
     # Check if username exists
     if any(user[0] == username and user[2] == password for user in users):
@@ -60,7 +60,7 @@ def deluser():
 def passwd():
     users = read_users()
 
-    username = input("enter your username: ").strip().lower
+    username = input("enter your username: ").strip().lower()
     user_index = next((i for i, user in enumerate(users) if user[0] == username), None)
 
     if user_index is not None:
