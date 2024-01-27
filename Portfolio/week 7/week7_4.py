@@ -12,17 +12,18 @@ zero counts, so some initialisation is needed. Also, sorting dictionaries is tri
 
 def frequency_analysis(message):
     message = message.lower()
-    message = message.replace(" ", "")#space is removed
+    message = message.replace(" ", "")  # space is removed
     letter_counts = {}
     for letter in message:
         if letter in letter_counts:
-            letter_counts[letter] += 1# if already in message add 1
+            letter_counts[letter] += 1  # if already in message add 1
         else:
-            letter_counts[letter] = 1# if not only 1
+            letter_counts[letter] = 1  # if not only 1
     sorted_letter_counts = sorted(letter_counts.items(), key=lambda x: x[1], reverse=True)
     return sorted_letter_counts[:6]
+
 
 message = input("Enter your message to encrypt: ")
 result = frequency_analysis(message)
 for letter, count in result:
-    print(f"{letter}: {count}")
+    print(f"{letter}:{count}")
